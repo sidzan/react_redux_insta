@@ -16,12 +16,14 @@ import { Provider } from 'react-redux';
 import store, { history } from './store'; 
 
 const router = (
+    <Provider store={store}>    
         <Router history={history}>
             <Route path="/" component={App}>
                 <IndexRoute component={PhotoGrid}></IndexRoute>
                 <Route path="/view/:postId" component={Single}/>
             </Route>
         </Router>
+    </Provider>
 
 )
 render(router,document.getElementById('root'));
